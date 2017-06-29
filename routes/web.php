@@ -11,6 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+Route::get('/','HomeController@index')->name('index');
+Route::get('/ivoice','HomeController@invoice')->name('invoice');
+Route::get('/numbers','HomeController@numbers')->name('numbers');
+Route::get('/other','HomeController@other')->name('other');
+Route::get('/price-sip','HomeController@pricesip')->name('pricesip');
+Route::get('/server','HomeController@server')->name('server');
+Route::get('/statistic','HomeController@statistic')->name('statistic');
+Route::get('/vn','HomeController@vn')->name('vn');
+Route::get('/vpn','HomeController@vpn')->name('vpn');
+
+
+
+Route::get('/cabinet', 'LibertyvoiceController@cabinet')->name('cabinet');
+Route::get('/admin', 'LibertyvoiceController@admin')->name('admin');
+Route::post('/admin/payment/add', 'LibertyvoiceController@addpayment')->name('addpayment');
+Route::post('/admin/number/add', 'LibertyvoiceController@addnumber')->name('addnumber');
+Route::post('/admin/number/remove/{id}', 'LibertyvoiceController@removenumber')->name('removenumber');
+Route::post('/cabinet/payment/extend/{id}', 'LibertyvoiceController@extendnumber')->name('extendnumber');

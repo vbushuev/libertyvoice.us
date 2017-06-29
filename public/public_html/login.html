@@ -1,0 +1,469 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Libre+Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <header class="head-block">
+            <div class="top-block">
+                <div class="wrapper clearfix">
+                    <ul class="top-left">
+                        <li><a href="https://t.me/LibertyVoice" class="top-link"><i class="fa fa-headphones" aria-hidden="true"></i>Get Support TELEGRAM</a></li>
+                        <li><a href="tel:+447441906776" class="top-link"><i class="fa fa-phone" aria-hidden="true"></i> +447441906776</a></li>
+                    </ul>
+                    <ul class="top-right">
+                        <li><a href="login.html" class="top-button"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>
+                        <!-- li><ul class="top-social clearfix">
+                            <li><a href="#" class="social twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="social facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="social google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                        </ul></li -->
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom-block">
+                <div class="wrapper clearfix">
+                    <div class="header-logo">
+                        <a href="index.html">
+                            <img src="img/Liberty%20voice%20logo_400.png" alt="sip">
+                        </a>
+                    </div>
+                    <nav class="header-nav">
+                        <ul>
+                            <li><a href="vn.html" class="nav-link">VIRTUAL NUMBERS</a></li>
+                            <li><a href="price-sip.html" class="nav-link">RATES FOR CALCS</a></li>
+                            <li><a href="server.html" class="nav-link">DEDICATED SERVER</a></li>
+                            <li><a href="vpn.html" class="nav-link">VPN</a></li>
+                            <li><a href="other.html" class="nav-link">OTHER SERVICES</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <section class="login">
+            <div class="wrapper">
+                <h2 class="form-title">Log In</h2>
+                <form action="#" method="post" class="login-form">
+                    <div class="form-line">
+                        <!-- Error message -->
+                        <div class="error-message">
+                            <!--p>Some text some text some text</p-->
+                        </div>
+                        <!-- End error message -->
+                    </div>
+                    <div class="form-line">
+                        <input type="email" name="email" placeholder="Enter your e-mail">
+                    </div>
+                    <div class="form-line">
+                        <input type="password" name="password" placeholder="Your password">
+                    </div>
+                    <div class="form-line">
+                        <input type="submit" value="Submit">
+                    </div>
+                    <div class="form-line clearfix">
+                        <a onclick="$('.popup-wrapper').toggleClass('hidden');">Forgot password?</a>
+                    </div>
+                </form>
+                <div class="popup-wrapper hidden">
+                    <div class="popup-container">
+                        <div class="popup-close"><a onclick="$('.popup-wrapper').toggleClass('hidden');">&cross;</a></div>
+                        <h2 class="form-title">Forgot password</h2>
+                        <div class="form-login-container">
+                            <form class="form-login" action="#" method="post">
+                                <div class="form-line clearfix">
+                                    <!-- Error message -->
+                                    <div class="error-message">
+                                        <!--p>Some text some text some text</p-->
+                                    </div>
+                                    <!-- End error message -->
+                                </div>
+                                <div class="form-line clearfix">
+                                    <input type="email" placeholder="E-mail" title="E-mail">
+                                </div>
+                                <div class="form-line clearfix">
+                                    <input type="submit" title="Send" value="Send">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="registration">
+            <div class="wrapper">
+                <h2 class="form-title">Registration</h2>
+                <form action="reg.php" method="post" class="form-registration">
+                    <div class="form-line clearfix">
+                        <!-- Error message -->
+                        <div class="error-message">
+                            <!--p>Some text some text some text</p-->
+                        </div>
+                        <!-- End error message -->
+                    </div>
+                    <div class="form-line clearfix">
+                        <input type="text" name="name" placeholder="Name" title="Name">
+                        <input type="text" name="surname" placeholder="Family name" title="Family name">
+                    </div>
+                    <div class="form-line clearfix">
+                        <input type="email" name="email" placeholder="E-mail" title="E-mail">
+                        <input type="password" name="password" placeholder="Password" title="Password">
+                    </div>
+                    <div class="form-line clearfix">
+                        <select name="Country" id="country">
+                            <option value="non-select" disabled selected>Select your country</option>
+                            <option value="non-select" disabled="" selected="">Select your country</option>
+                            <option value="Afghanistan">Afghanistan</option>
+                            <option value="Albania">Albania</option>
+                            <option value="Algeria">Algeria</option>
+                            <option value="Andorra">Andorra</option>
+                            <option value="Angola">Angola</option>
+                            <option value="Anguilla">Anguilla</option>
+                            <option value="Antarctica">Antarctica</option>
+                            <option value="Antigua and/or Barbuda">Antigua and/or Barbuda</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Armenia">Armenia</option>
+                            <option value="Aruba">Aruba</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Azerbaijan">Azerbaijan</option>
+                            <option value="Bahamas">Bahamas</option>
+                            <option value="Bahrain">Bahrain</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Barbados">Barbados</option>
+                            <option value="Belarus">Belarus</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="Belize">Belize</option>
+                            <option value="Benin">Benin</option>
+                            <option value="Bermuda">Bermuda</option>
+                            <option value="Bhutan">Bhutan</option>
+                            <option value="Bolivia">Bolivia</option>
+                            <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                            <option value="Botswana">Botswana</option>
+                            <option value="Brazil">Brazil</option>
+                            <option value="British lndian Ocean Territory">British lndian Ocean Territory</option>
+                            <option value="Brunei Darussalam">Brunei Darussalam</option>
+                            <option value="Bulgaria">Bulgaria</option>
+                            <option value="Burkina Faso">Burkina Faso</option>
+                            <option value="Burundi">Burundi</option>
+                            <option value="Cambodia">Cambodia</option>
+                            <option value="Cameroon">Cameroon</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Cape Verde">Cape Verde</option>
+                            <option value="Cayman Islands">Cayman Islands</option>
+                            <option value="Central African Republic">Central African Republic</option>
+                            <option value="Chad">Chad</option>
+                            <option value="Chile">Chile</option>
+                            <option value="China">China</option>
+                            <option value="Christmas Island">Christmas Island</option>
+                            <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Comoros">Comoros</option>
+                            <option value="Congo">Congo</option>
+                            <option value="Congo (la Rép. dém. du) (ex-Zaïre)">Congo (la Rép. dém. du) (ex-Zaïre)</option>
+                            <option value="Cook Islands">Cook Islands</option>
+                            <option value="Costa Rica">Costa Rica</option>
+                            <option value="Croatia (Hrvatska)">Croatia (Hrvatska)</option>
+                            <option value="Cuba">Cuba</option>
+                            <option value="Cyprus">Cyprus</option>
+                            <option value="Czech Republic">Czech Republic</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="Djibouti">Djibouti</option>
+                            <option value="Dominica">Dominica</option>
+                            <option value="Dominican Republic">Dominican Republic</option>
+                            <option value="East Timor">East Timor</option>
+                            <option value="Ecuador">Ecuador</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="El Salvador">El Salvador</option>
+                            <option value="Equatorial Guinea">Equatorial Guinea</option>
+                            <option value="Eritrea">Eritrea</option>
+                            <option value="Estonia">Estonia</option>
+                            <option value="Ethiopia">Ethiopia</option>
+                            <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+                            <option value="Faroe Islands">Faroe Islands</option>
+                            <option value="Fiji">Fiji</option>
+                            <option value="Finland">Finland</option>
+                            <option value="France">France</option>
+                            <option value="French Guiana">French Guiana</option>
+                            <option value="French Polynesia">French Polynesia</option>
+                            <option value="Gabon">Gabon</option>
+                            <option value="Gambia">Gambia</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Ghana">Ghana</option>
+                            <option value="Gibraltar">Gibraltar</option>
+                            <option value="Greece">Greece</option>
+                            <option value="Greenland">Greenland</option>
+                            <option value="Grenada">Grenada</option>
+                            <option value="Guadeloupe">Guadeloupe</option>
+                            <option value="Guam">Guam</option>
+                            <option value="Guatemala">Guatemala</option>
+                            <option value="Guinea">Guinea</option>
+                            <option value="Guinea-Bissau">Guinea-Bissau</option>
+                            <option value="Guyana">Guyana</option>
+                            <option value="Haiti">Haiti</option>
+                            <option value="Honduras">Honduras</option>
+                            <option value="Hong Kong">Hong Kong</option>
+                            <option value="Hungary">Hungary</option>
+                            <option value="Iceland">Iceland</option>
+                            <option value="India">India</option>
+                            <option value="Indonesia">Indonesia</option>
+                            <option value="Iran (Islamic Republic of)">Iran (Islamic Republic of)</option>
+                            <option value="Iraq">Iraq</option>
+                            <option value="Ireland">Ireland</option>
+                            <option value="Israel">Israel</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Ivory Coast">Ivory Coast</option>
+                            <option value="Jamaica">Jamaica</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Jordan">Jordan</option>
+                            <option value="Kazakhstan">Kazakhstan</option>
+                            <option value="Kenya">Kenya</option>
+                            <option value="Kiribati">Kiribati</option>
+                            <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+                            <option value="Korea, Republic of">Korea, Republic of</option>
+                            <option value="Kuwait">Kuwait</option>
+                            <option value="Kyrgyzstan">Kyrgyzstan</option>
+                            <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                            <option value="Latvia">Latvia</option>
+                            <option value="Lebanon">Lebanon</option>
+                            <option value="les Samoa américaines">les Samoa américaines</option>
+                            <option value="Lesotho">Lesotho</option>
+                            <option value="Liberia">Liberia</option>
+                            <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+                            <option value="Liechtenstein">Liechtenstein</option>
+                            <option value="Lithuania">Lithuania</option>
+                            <option value="Luxembourg">Luxembourg</option>
+                            <option value="Macau">Macau</option>
+                            <option value="Macedonia">Macedonia</option>
+                            <option value="Madagascar">Madagascar</option>
+                            <option value="Malawi">Malawi</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="Maldives">Maldives</option>
+                            <option value="Mali">Mali</option>
+                            <option value="Malta">Malta</option>
+                            <option value="Marshall Islands">Marshall Islands</option>
+                            <option value="Martinique">Martinique</option>
+                            <option value="Mauritania">Mauritania</option>
+                            <option value="Mauritius">Mauritius</option>
+                            <option value="Mayotte">Mayotte</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+                            <option value="Moldova, Republic of">Moldova, Republic of</option>
+                            <option value="Monaco">Monaco</option>
+                            <option value="Mongolia">Mongolia</option>
+                            <option value="Montserrat">Montserrat</option>
+                            <option value="Morocco">Morocco</option>
+                            <option value="Mozambique">Mozambique</option>
+                            <option value="Myanmar">Myanmar</option>
+                            <option value="Namibia">Namibia</option>
+                            <option value="Nauru">Nauru</option>
+                            <option value="Nepal">Nepal</option>
+                            <option value="Netherlands">Netherlands</option>
+                            <option value="Netherlands Antilles">Netherlands Antilles</option>
+                            <option value="New Caledonia">New Caledonia</option>
+                            <option value="New Caledonia">New Caledonia</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="Nicaragua">Nicaragua</option>
+                            <option value="Niger">Niger</option>
+                            <option value="Nigeria">Nigeria</option>
+                            <option value="Niue">Niue</option>
+                            <option value="Norfork Island">Norfork Island</option>
+                            <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                            <option value="Norway">Norway</option>
+                            <option value="Oman">Oman</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Palau">Palau</option>
+                            <option value="Panama">Panama</option>
+                            <option value="Papua New Guinea">Papua New Guinea</option>
+                            <option value="Paraguay">Paraguay</option>
+                            <option value="Peru">Peru</option>
+                            <option value="Philippines">Philippines</option>
+                            <option value="Pitcairn">Pitcairn</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Qatar">Qatar</option>
+                            <option value="Reunion">Reunion</option>
+                            <option value="Romania">Romania</option>
+                            <option value="Russian Federation">Russian Federation</option>
+                            <option value="Rwanda">Rwanda</option>
+                            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                            <option value="Saint Lucia">Saint Lucia</option>
+                            <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+                            <option value="Samoa">Samoa</option>
+                            <option value="Samoa américaine">Samoa américaine</option>
+                            <option value="San Marino">San Marino</option>
+                            <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                            <option value="Saudi Arabia">Saudi Arabia</option>
+                            <option value="Senegal">Senegal</option>
+                            <option value="Seychelles">Seychelles</option>
+                            <option value="Sierra Leone">Sierra Leone</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="Slovakia">Slovakia</option>
+                            <option value="Slovenia">Slovenia</option>
+                            <option value="Solomon Islands">Solomon Islands</option>
+                            <option value="Somalia">Somalia</option>
+                            <option value="South Africa">South Africa</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Sri Lanka">Sri Lanka</option>
+                            <option value="St. Helena">St. Helena</option>
+                            <option value="St. Pierre and Miquelon">St. Pierre and Miquelon</option>
+                            <option value="Sudan">Sudan</option>
+                            <option value="Suriname">Suriname</option>
+                            <option value="Svalbarn and Jan Mayen Islands">Svalbarn and Jan Mayen Islands</option>
+                            <option value="Swaziland">Swaziland</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="Switzerland">Switzerland</option>
+                            <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+                            <option value="Taiwan">Taiwan</option>
+                            <option value="Tajikistan">Tajikistan</option>
+                            <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+                            <option value="Thailand">Thailand</option>
+                            <option value="Togo">Togo</option>
+                            <option value="Tokelau">Tokelau</option>
+                            <option value="Tonga">Tonga</option>
+                            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                            <option value="Tunisia">Tunisia</option>
+                            <option value="Turkey">Turkey</option>
+                            <option value="Turkmenistan">Turkmenistan</option>
+                            <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                            <option value="Tuvalu">Tuvalu</option>
+                            <option value="Uganda">Uganda</option>
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="United Arab Emirates">United Arab Emirates</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="United States">United States</option>
+                            <option value="URSS">URSS</option>
+                            <option value="Uruguay">Uruguay</option>
+                            <option value="Uzbekistan">Uzbekistan</option>
+                            <option value="Vanuatu">Vanuatu</option>
+                            <option value="Vatican City State">Vatican City State</option>
+                            <option value="Venezuela">Venezuela</option>
+                            <option value="Vietnam">Vietnam</option>
+                            <option value="Virgin Islands (British)">Virgin Islands (British)</option>
+                            <option value="Virgin Islands (U.S.)">Virgin Islands (U.S.)</option>
+                            <option value="Wallis and Futuna Islands">Wallis and Futuna Islands</option>
+                            <option value="Western Sahara">Western Sahara</option>
+                            <option value="Yemen">Yemen</option>
+                            <option value="Yugoslavia">Yugoslavia</option>
+                            <option value="Zaire">Zaire</option>
+                            <option value="Zambia">Zambia</option>
+                            <option value="Zimbabwe">Zimbabwe</option>
+                            <option value="Zone neutre">Zone neutre</option>
+                        </select>
+                        <input type="tel" name="tel" placeholder="Phone" title="Phone" />
+                    </div>
+                    <div class="form-line clearfix">
+                        <input type="submit" title="Registration" value="Registration">
+                    </div>
+
+                </form>
+            </div>
+        </section>
+        
+        
+
+        <footer class="foot-block">
+            <div class="footer-top">
+                <div class="wrapper">
+                    <div class="box">
+                        <p>
+                            <a href="#">
+                                <img src="img/logo-gray.png" alt="Liberty Voice">
+                            </a>
+                        </p>
+                        <p>
+                            At LibertyVoice we provide a services platform designed for companies who want to build a SIP trunking for trading company.
+                        </p>
+                    </div>
+                    <div class="box">
+                        <h5>SIP TRUNK PLATFORM</h5>
+                        <ul>
+                            <li><a href="vn.html">VIRTUAL NUMBERS</a></li>
+                            <li><a href="price-sip.html">RATES FOR CALCS</a></li>
+                            <li><a href="server.html">DEDICATED SERVER</a></li>
+                            <li><a href="vpn.html">VPN</a></li>
+                            <li><a href="other.html">OTHER SERVICES</a></li>
+                        </ul>
+                    </div>
+                    <div class="box">
+                        <h5>DOWNLOAD APPLICAION</h5>
+                        <ul class="recent-blog">
+                            <li class="post"><a href="http://www.zoiper.com/download.php">Download ZoIPer</a></li>
+                            <li class="post"><a href="http://www.counterpath.com/x-lite-download.html">Download X-Lite</a></li>
+                            <li class="post"><a href="http://www.linphone.org/eng/download/">Download Linphone</a></li>
+                        </ul>
+                    </div>
+                    <div class="box">
+                        <h5>GET IN TOUCH</h5>
+                        <ul>
+                            <li>
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span class="bright">LibertyVoice, INC</span><br>
+                                <span></span>
+                            </li>
+                            <li>
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span class="bright">London</span>
+                                <a href="tel:+447441906776">+447441906776</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span class="bright">Moscow</span>
+                                <a href="tel:+447441906776">+447441906776</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span class="bright">Tel Aviv</span>
+                                <a href="tel:+447441906776">+447441906776</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <a href="https://t.me/LibertyVoice"> Get Support Here Telegram </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="wrapper clearfix">
+                    <div class="copyright">© 2017 LibertyVoice.us</div>
+                    <!--ul class="privacy-policy clearfix">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li class="divider">|</li>
+                        <li><a href="#">Acceptable Use Policy</a></li>
+                        <li class="divider">|</li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul-->
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

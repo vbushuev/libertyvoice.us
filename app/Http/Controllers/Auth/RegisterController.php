@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use App\Notifications\UserRegistered;
+use App\Notifications\AdminUserRegistered;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -27,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/cabinet';
 
     /**
      * Create a new controller instance.
@@ -49,8 +52,11 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'country' => 'required|string|max:100',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'phone' => 'required|string|max:16|unique:users',
+            'password' => 'required|string|min:6'
         ]);
     }
 
@@ -63,9 +69,16 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
+            'country' => $data['country'],
             'name' => $data['name'],
+            'lastname' => $data['lastname'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+    protected function registered(Request $request, $user) {
+        $user->notify(new UserRegistered($user));
+        $user->notify(new AdminUserRegistered($user));
     }
 }
