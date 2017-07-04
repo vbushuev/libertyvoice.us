@@ -1,4 +1,4 @@
-<div class="modal fade" id="numbers_{{$user->id}}" data-rel="/admin/number/add">
+<div class="modal fade" id="services_{{$user->id}}">
     <div class="modal-dialog modal-lg">
         <!-- <form action="/data/user/update" type="GET"> -->
         <div class="modal-content">
@@ -13,16 +13,17 @@
 
                         <table>
                             <thead>
-                                <tr><th colspan="6">Number</th></tr>
-                                <tr><th>Date</th><th>Number</th><th>Price</th><th>State</th><th colspan="2">Avaliable until</th></tr>
+                                <tr><th colspan="7">Services</th></tr>
+                                <tr><th>Date</th><th>Type</th><th>Number</th><th>Price for period</th><th>State</th><th colspan="2">Avaliable until</th></tr>
                             </thead>
-                                @if (isset($user->numbers))
+                                @if (isset($user->services))
                                 <tbody>
-                                    @foreach($user->numbers as $user_number)
+                                    @foreach($user->services as $user_number)
                                         <tr>
                                             <td>{{$user_number->created_at}}</td>
+                                            <td>{{$user_number->type}}</td>
                                             <td>{{$user_number->number}}</td>
-                                            <td>{{$user_number->amount}} {{$user_number->currency}}</td>
+                                            <td>{{$user_number->amount}} {{$user_number->currency}} / per {{$user_number->period}} days</td>
                                             <td>{{$user_number->state}}</td>
                                             <td>{{$user_number->until}}</td>
                                             <td>
@@ -40,10 +41,20 @@
                         </table>
 
 
-                        <form action="/admin/number/add" method="post">
-                            <h2>Add number</h2>
+                        <form action="/admin/service/add" method="post">
+                            <h2>Add services</h2>
+                            <div class="form-line">
+                                <select class="form-control" placeholder="Currency" aria-describedby="basic-addon1" name="type">
+                                    <option value="number">SIP number</option>
+                                    <option value="vpn">VPN</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
                             <div class="form-line">
                                 <input type="text" class="form-control" placeholder="Number" aria-describedby="basic-addon1" name="number" value="">
+                            </div>
+                            <div class="form-line">
+                                <input type="text" class="form-control" placeholder="Period" aria-describedby="basic-addon1" name="period" value="30">
                             </div>
                             <div class="form-line">
                                 <input type="text" class="form-control" placeholder="Amount per month (30 days)" aria-describedby="basic-addon1" name="amount" value="">
@@ -76,8 +87,8 @@
     </div>
 </div><!--end .modal-->
 <script>
-function numbers(){
+function services(){
     var user_id = arguments.length?arguments[0]:null;
-    $("#numbers_"+user_id).modal();
+    $("#services_"+user_id).modal();
 }
 </script>

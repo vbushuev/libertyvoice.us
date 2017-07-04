@@ -45,7 +45,7 @@ class UserRegistered extends Notification
             ->subject('Welcome')
             ->line('Dear ' . $this->user->name .' '.$this->user->lastname.', we are happy to see you here.')
             ->action('Go to site', url('/cabinet'))
-            ->line('Please tell your friends about us.');
+            ->line('We are glad to welcome you!');
     }
 
     /**

@@ -7,6 +7,7 @@ use App\User;
 use App\Userdata;
 use App\Payment;
 use App\Number;
+use App\Service;
 use Illuminate\Http\Request;
 
 class LibertyvoiceController extends Controller
@@ -23,8 +24,8 @@ class LibertyvoiceController extends Controller
     public function cabinet(Request $rq){
         $udata = Userdata::where("user_id",$rq->user()->id)->get();
         $upayments = Payment::where("user_id",$rq->user()->id)->get();
-        $unumbers = Number::where("user_id",$rq->user()->id)->get();
-        return view('cabinet',["userdata"=>$udata,"payments"=>$upayments,"numbers"=>$unumbers]);
+        $uservices = Service::where("user_id",$rq->user()->id)->get();
+        return view('cabinet',["userdata"=>$udata,"payments"=>$upayments,"services"=>$uservices]);
     }
     public function admin(Request $rq){
         $this->authorize('admin');
@@ -32,7 +33,7 @@ class LibertyvoiceController extends Controller
         $res = [];
         foreach ($users->toArray() as $user) {
             $user["payments"]=Payment::where("user_id",$user["id"])->get();
-            $user["numbers"]=Number::where("user_id",$user["id"])->get();
+            $user["services"]=Service::where("user_id",$user["id"])->get();
             $user["data"]=Userdata::where("user_id",$user["id"])->get();
             $res[]=$user;
         }
@@ -58,8 +59,16 @@ class LibertyvoiceController extends Controller
         Number::find($id)->delete();
         return redirect()->route('admin');
     }
+    public function edituser($id, Request $rq){
+        $user = User::find($id);
+        $data = $rq->all();
+        if(!isset($data["password"]) || strlen($data["password"])==0 || is_null($data["password"])) unset($data["password"]);
+        $user->fill($data);
+        $user->save();
+        return redirect()->route('admin');
+    }
     public function extendnumber($id,Request $rq){
-        $number = Number::find($id);
+        $number = Service::find($id);
         $user = $rq->user();
         if($user->id == $number->user_id && $user->currency == $number->currency && $user->balance>=$number->amount){
             $user->balance -= $number->amount;
@@ -73,9 +82,27 @@ class LibertyvoiceController extends Controller
             $date = date_create($number->until);
             date_add($date, date_interval_create_from_date_string('30 days'));
             $number->until = $date;
+            $number->state = 'active';
             $number->save();
             $user->save();
         }
         return redirect()->route('cabinet');
+    }
+    public function serviceadd(Request $rq){
+        $user = User::find($rq->input("user_id",0));
+        $data = $rq->all();
+        $data["until"] = date("Y-m-d");
+        Service::create($data);
+        return redirect()->route('admin');
+    }
+    public function serviceedit($id,Request $rq){
+        $data = $rq->all();
+        $service = Service::find($id);
+        $service->fill($data)->save();
+        return redirect()->route('admin');
+    }
+    public function serviceremove($id){
+        Service::find($id)->delete();
+        return redirect()->route('admin');
     }
 }

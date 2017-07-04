@@ -23,14 +23,23 @@
                         <td><a href="mailto:{{$user->email}}">{{$user->email}}</a></td>
                         <td>{{$user->country}}</td>
                         <td>{{$user->balance}}</td>
-                        <td><a href="#" onclick="data({{$user->id}});" class="button-long"><i class="fa fa-gear"></i>&nbsp;Edit</a></td>
-                        <td><a href="#" onclick="numbers({{$user->id}});" class="button-long"><i class="fa fa-phone"></i>&nbsp;Numbers</a></td>
+                        <td><a href="#" onclick="useredit({{$user->id}});" class="button-long"><i class="fa fa-gear"></i>&nbsp;Edit</a></td>
+                        <td><a href="#" onclick="services({{$user->id}});" class="button-long"><i class="fa fa-phone"></i>&nbsp;Services</a></td>
                         <td><a href="#" onclick="payments({{$user->id}});" class="button-long"><i class="fa fa-usd"></i>&nbsp;Payments</a></td>
                     </tr>
-                    <tr style="height:0;">
-                        <td colspan="8">
+                    <tr>
+                        <td>
+                            Comments:
+                        </td>
+                        <td colspan="7">
+                            {{$user->comments}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="8"  style="height:0;">
                             @include('modal.payments',["user"=>$user])
-                            @include('modal.numbers',["user"=>$user])
+                            @include('modal.services',["user"=>$user])
+                            @include('modal.user',["user"=>$user])
                         </td>
                     </tr>
 
