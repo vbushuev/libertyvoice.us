@@ -5,8 +5,9 @@
     <div class="wrapper">
         <table class="invoice">
             <thead>
-                <tr><th colspan="8">Users</th></tr>
+                <tr><th colspan="9">Users</th></tr>
                 <tr>
+                    <th>Source</th>
                     <th>Name</th>
                     <th>Lastname</th>
                     <th>Email</th>
@@ -18,6 +19,7 @@
             <tbody>
                 @foreach($users as $user)
                     <tr>
+                        <td>{{$user->source}}</td>
                         <td>{{$user->name}}</td>
                         <td>{{$user->lastname}}</td>
                         <td><a href="mailto:{{$user->email}}">{{$user->email}}</a></td>
@@ -31,12 +33,12 @@
                         <td>
                             Comments:
                         </td>
-                        <td colspan="7">
+                        <td colspan="8">
                             {{$user->comments}}
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="8"  style="height:0;">
+                        <td colspan="9"  style="height:0;">
                             @include('modal.payments',["user"=>$user])
                             @include('modal.services',["user"=>$user])
                             @include('modal.user',["user"=>$user])

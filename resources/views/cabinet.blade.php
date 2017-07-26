@@ -34,6 +34,10 @@
         text-decoration: none;
         border-bottom: solid 2px black;
     }
+    table.invoice tr td.right{
+        border:none;
+        text-align: center;
+    }
     /*.pills-data:target{
         display: block;
         pointer-events: auto;
@@ -50,10 +54,19 @@
             <h2>Profile</h2>
             <table class="invoice">
                 <tbody>
-                    <tr><th>Name</th><td>{{Auth::user()->name}}</td></tr>
+                    <tr>
+                        <th>Name</th><td>{{Auth::user()->name}}</td>
+                        <td rowspan=2 class="right">
+                            <a href="{{Auth::user()->billing}}">Billing link</a><br />
+                            <p>{{ Auth::user()->billing_data}}</p>
+                        </td>
+                    </tr>
                     <tr><th>Last Name</th><td>{{Auth::user()->lastname}}</td></tr>
-                    <tr><th>Email</th><td>{{Auth::user()->email}}</td></tr>
-                    <tr><th>Balance</th><td>{{ Auth::user()->balance}} {{ Auth::user()->currency}}</td></td></tr>
+                    <tr><th>Email</th><td>{{Auth::user()->email}}</td><td class="right" rowspan=2>
+                        <a href="{{Auth::user()->sip_link}}">Sip accounts</a><br />
+                        {{ Auth::user()->sip_data}}
+                    </td></tr>
+                    <tr><th>Balance</th><td>{{ Auth::user()->balance}} {{ Auth::user()->currency}}</td></tr>
                 </tbody>
             </table>
         </div>
@@ -62,7 +75,7 @@
             <h2>Numbers</h2>
             <table class="invoice">
                 <thead>
-                    <tr><th>Type</th><th>Number</th><th>Amount per period</th><th>Period (days)</th><th>Avaliable</th><th></th></tr>
+                    <tr><th>Type</th><th>Number</th><th>Amount per period</th><th>Period (days)</th><th>Available</th><th></th></tr>
                 </thead>
                 <tbody>
                     @foreach($services as $number)

@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Notifications\UserRegistered;
 use App\Notifications\AdminUserRegistered;
 use Illuminate\Http\Request;
+// use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -57,6 +59,7 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'phone' => 'required|string|max:16|unique:users',
             'password' => 'required|string|min:6'
+
         ]);
     }
 
@@ -75,10 +78,11 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'phone' => $data['phone'],
             'password' => bcrypt($data['password']),
+            'currency' => 'USD'
         ]);
     }
     protected function registered(Request $request, $user) {
         $user->notify(new UserRegistered($user));
-        $user->notify(new AdminUserRegistered($user));
+        Notification::send(User::where('role','admin')->get(),new AdminUserRegistered($user));
     }
 }

@@ -14,7 +14,7 @@
                         <table>
                             <thead>
                                 <tr><th colspan="7">Services</th></tr>
-                                <tr><th>Date</th><th>Type</th><th>Number</th><th>Price for period</th><th>State</th><th colspan="2">Avaliable until</th></tr>
+                                <tr><th>Date</th><th>Type</th><th>Number</th><th>Price for period</th><th>State</th><th colspan="2">Available until</th></tr>
                             </thead>
                                 @if (isset($user->services))
                                 <tbody>
@@ -55,6 +55,9 @@
                             </div>
                             <div class="form-line">
                                 <input type="text" class="form-control" placeholder="Period" aria-describedby="basic-addon1" name="period" value="30">
+                            </div>
+                            <div class="form-line">
+                                <input type="date" class="form-control" placeholder="Available until" aria-describedby="basic-addon1" name="until" value="<?php echo date("Y-m-d");?>">
                             </div>
                             <div class="form-line">
                                 <input type="text" class="form-control" placeholder="Amount per month (30 days)" aria-describedby="basic-addon1" name="amount" value="">

@@ -36,6 +36,15 @@
                             {{ Auth::user()->balance}} {{ Auth::user()->currency}}
                             &nbsp;&nbsp;&nbsp;
                         </li>
+                        @else
+                        <li>
+                            <a href="/admin">Admin pane</a>
+                            &nbsp;&nbsp;&nbsp;
+                        </li>
+                        <li>
+                            <a href="/cabinet">Cabinet</a>
+                            &nbsp;&nbsp;&nbsp;
+                        </li>
                         @endif
 
                         <li class="dropdown">

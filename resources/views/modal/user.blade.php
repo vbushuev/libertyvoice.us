@@ -14,6 +14,9 @@
                             <h2>Edit user</h2>
                             <!-- 'name', 'lastname','country','email','phone','password','balance','currency','comments' -->
                             <div class="form-line">
+                                <input type="text" class="form-control" placeholder="Source" aria-describedby="basic-addon1" name="source" value="{{$user->source}}">
+                            </div>
+                            <div class="form-line">
                                 <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1" name="name" value="{{$user->name}}">
                             </div>
                             <div class="form-line">
@@ -281,6 +284,18 @@
                             </div>
                             <div class="form-line">
                                 <textarea class="form-control" placeholder="Comments" aria-describedby="basic-addon1" name="comments">{{$user->comments}}</textarea>
+                            </div>
+                            <div class="form-line">
+                                <input type="text" class="form-control" placeholder="Billing link" aria-describedby="basic-addon1" name="billing" value="{{$user->billing}}">
+                            </div>
+                            <div class="form-line">
+                                <textarea class="form-control" placeholder="Billing date" aria-describedby="basic-addon1" name="billing_data">{{$user->billing_data}}</textarea>
+                            </div>
+                            <div class="form-line">
+                                <input type="text" class="form-control" placeholder="Sip link" aria-describedby="basic-addon1" name="sip_link" value="{{$user->sip_link}}">
+                            </div>
+                            <div class="form-line">
+                                <textarea class="form-control" placeholder="Sip date" aria-describedby="basic-addon1" name="sip_data">{{$user->sip_data}}</textarea>
                             </div>
                             <div class="form-line clearfix">
                                 {{ csrf_field() }}

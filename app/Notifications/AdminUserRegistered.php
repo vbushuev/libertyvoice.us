@@ -11,6 +11,7 @@ class AdminUserRegistered extends Notification
 {
     use Queueable;
     protected $user;
+    
     /**
      * Create a new notification instance.
      *
@@ -61,7 +62,4 @@ class AdminUserRegistered extends Notification
             //
         ];
     }
-    public function routeNotificationForMail(){
-       return "yanusdnd@inbox.ru";
-   }
 }

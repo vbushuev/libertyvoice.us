@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'lastname','country','email','phone','password','balance','currency','comments'
+        'name', 'lastname','country','email','phone','password','balance','currency','comments','source','billing','billing_data','sip_link','sip_data'
     ];
 
     /**
@@ -26,5 +26,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
+    public function routeNotificationForMail(){
+       return $this->email;
+   }
 }

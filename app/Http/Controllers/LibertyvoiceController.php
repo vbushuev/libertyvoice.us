@@ -91,7 +91,7 @@ class LibertyvoiceController extends Controller
     public function serviceadd(Request $rq){
         $user = User::find($rq->input("user_id",0));
         $data = $rq->all();
-        $data["until"] = date("Y-m-d");
+        $data["until"] = (isset($data["until"])&&!empty($data["until"]))?$data["until"]:date("Y-m-d");
         Service::create($data);
         return redirect()->route('admin');
     }
