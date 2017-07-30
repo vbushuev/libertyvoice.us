@@ -1,0 +1,13 @@
+.sip-data-list{
+
+}
+.sip-extensions {
+    text-align: left;
+}
+.sip-extensions > ul {
+    margin-left: 1em;
+}
+.sip-extensions > ul > li{
+    display: block;
+
+}

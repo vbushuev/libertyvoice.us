@@ -29,7 +29,8 @@ class LibertyvoiceController extends Controller
     }
     public function admin(Request $rq){
         $this->authorize('admin');
-        $users = User::where("role","user")->get();
+        // $users = User::where("role","user")->get();
+        $users = User::get();
         $res = [];
         foreach ($users->toArray() as $user) {
             $user["payments"]=Payment::where("user_id",$user["id"])->get();

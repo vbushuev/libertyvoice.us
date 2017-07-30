@@ -64,7 +64,7 @@
                     <tr><th>Last Name</th><td>{{Auth::user()->lastname}}</td></tr>
                     <tr><th>Email</th><td>{{Auth::user()->email}}</td><td class="right" rowspan=2>
                         <a href="{{Auth::user()->sip_link}}">Sip accounts</a><br />
-                        {{ Auth::user()->sip_data}}
+                        {!! Auth::user()->sip_data !!}
                     </td></tr>
                     <tr><th>Balance</th><td>{{ Auth::user()->balance}} {{ Auth::user()->currency}}</td></tr>
                 </tbody>
